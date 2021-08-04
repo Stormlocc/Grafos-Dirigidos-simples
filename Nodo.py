@@ -20,10 +20,4 @@ class Nodo():
     def MostrarNodo(self):
         print(self.__clave + " --> ", end="")    #Mostrar clave (caracter)
         self.__estado.MostrarLista()    #Mostrar los estados que conduce 
-                                        #       la clave(no determinista)
 
-#z= Nodo("a")
-#z.get_estado().Agregar(3)
-#z.get_estado().Agregar(4)
-#z.get_estado().Agregar(1)
-#z.MostrarNodo()
