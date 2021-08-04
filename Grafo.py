@@ -64,9 +64,7 @@ class Grafo():
                     #Agregamos el alfabeto, creo agregamos explicitamente
                     self.__lista.Agregar(Nodo(clave))
                     #Agregamos el vf
-                    #print(self.__lista.ObtenerNodo(clave))
                     self.__lista.ObtenerNodo(clave).get_estado().Agregar(vf)
-                    self.__lista.VerNodos()
             else:
                 self.__subGrafo.AgregarArco(vo,vf,clave)
         else:
@@ -77,10 +75,9 @@ class Grafo():
             print("Vertice: " + str(self.__vertice));
             self.__lista.VerNodos();
             self.__subGrafo.MostrarGrafo();  
- 
         else:
             print();
-    
+
 
 
 rafo = Grafo()
@@ -92,10 +89,10 @@ rafo.AgregarVertice(5)
 
 rafo.AgregarArco(1,2,"a")
 rafo.AgregarArco(1,3,"b")
-#rafo.AgregarArco(2,2,"a")
-#rafo.AgregarArco(2,4,"b")
-#rafo.AgregarArco(3,5,"b")
-#rafo.AgregarArco(4,3,"a")
-#rafo.AgregarArco(5,4,"a")
+rafo.AgregarArco(2,2,"a")
+rafo.AgregarArco(2,4,"b")
+rafo.AgregarArco(3,5,"b")
+rafo.AgregarArco(4,3,"a")
+rafo.AgregarArco(5,4,"a")
 
-#rafo.MostrarGrafo()
+rafo.MostrarGrafo()

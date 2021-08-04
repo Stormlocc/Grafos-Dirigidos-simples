@@ -22,21 +22,22 @@ class ListaRecursiva():
         return self.__elemento == None and self.__subLista == None
 
     def Agregar(self, elemento):
-        if(self.EstaVacio()):
+        if(self.EstaVacio()):               #Asi se agrega el primer nodo
             self.__elemento = elemento
-            self.__subLista = ListaRecursiva()
+            self.__subLista = ListaRecursiva() #lopez
         else:
             self.__subLista.Agregar(elemento)
 
     def Exite(self, elemento):          #Optimizar el return
         if(self.EstaVacio()):
-            print('1')
             return False
-        elif(self.__elemento.get_clave() == elemento):  #Mutar a nodo 
+        elif(self.__elemento.get_clave() == elemento):
             return True
-        else:
-            print('2')
-            self.__subLista.Existe(elemento)
+        else:                           #Ver el siguiente nodo
+            #print('2')                  #Falta inicializar
+            z = self.__subLista
+            z.Exite(elemento)
+            #self.__subLista.Existe(elemento)
 
     def ObtenerIesimo(self, i):
         if(i<=1):
@@ -49,11 +50,9 @@ class ListaRecursiva():
             print("Noneee")
             return None
         elif(self.__elemento.get_clave() == elemento):
-            #print("en lista encontro a")
-            return self.__elemento
+            return self.__elemento #sino con get
         else:
-            print("Aqui todavia se;or")
-            self.__subLista.ObtenerNodo(elemento)
+            return self.__subLista.ObtenerNodo(elemento)
 
     def MostrarLista(self):
         if (not self.EstaVacio()):
@@ -67,9 +66,4 @@ class ListaRecursiva():
             self.__elemento.MostrarNodo() #Mostrar caracteres de estado
             self.__subLista.VerNodos()     #Mostrar siguente estado
         else:
-            print("finNodos/el=Null , subL=Null")
-
-#z=ListaRecursiva()
-#z= Nodo("a")
-#z.Agregar()
-#print(z.EstaVacio())
+            print("")
